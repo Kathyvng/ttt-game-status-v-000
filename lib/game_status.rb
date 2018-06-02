@@ -12,6 +12,12 @@ WIN_COMBINATIONS = [[0,1,2],
                     [0,4,8],
                     [6,4,2]]
 
+def check_win_combination?(board, player, win_combo)
+  win_combo.all? do |position|
+  board[position] == player
+  end
+end
+
 def won?(board)
     WIN_COMBINATIONS.each do |win_combo|
     if check_win_combination?(board, "X", win_combo)
@@ -22,12 +28,6 @@ def won?(board)
       return false
       end
     end
-end
-
-def check_win_combination?(board, player, win_combo)
-  win_combo.all? do |position|
-    board[position] == player
-  end
 end
 
 def full?(board)
