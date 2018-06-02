@@ -19,7 +19,7 @@ def check_win_combination?(board, player, win_combo)
 end
 
 def won?(board)
-  WIN_COMBINATIONS.each |win_combo|
+  WIN_COMBINATIONS.each do |win_combo|
     if position_1 == "X" && position_2 == "X" && position_3 == "X"
       return win_combo
     elsif position_1 == "O" && position_2 == "O" && position_3 == "O"
